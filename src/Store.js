@@ -9,12 +9,12 @@ import promise from 'redux-promise';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
-import RootReducer from './Reducers';
+import combineReducers from './Reducers/';
 
 const middleware = applyMiddleware(thunk, promise, logger);
 
 const Store = createStore(
-    RootReducer,
+    combineReducers,
     compose(
         middleware,
         devTools({
